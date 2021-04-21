@@ -1,0 +1,65 @@
+{
+  "commit-msg": {
+    "enabled": false,
+    "actions": []
+  },
+  "pre-push": {
+    "enabled": true,
+    "actions": [
+      {
+        "action": "make phpstan",
+        "options": [],
+        "conditions": []
+      }
+    ]
+  },
+  "pre-commit": {
+    "enabled": true,
+    "actions": [
+      {
+        "action": "make phpunit",
+        "options": [],
+        "conditions": []
+      },
+      {
+        "action": "make cs-fixer FILES_PHP='{$STAGED_FILES}'",
+        "options": [],
+        "conditions": []
+      },
+      {
+        "action": "make phpstan FILES_PHP='{$STAGED_FILES}'",
+        "options": [],
+        "conditions": []
+      },
+      {
+        "action": "make prettier-check FILES='{$STAGED_FILES}'",
+        "options": [],
+        "conditions": []
+      }
+    ]
+  },
+  "prepare-commit-msg": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-commit": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-merge": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-checkout": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-rewrite": {
+    "enabled": false,
+    "actions": []
+  },
+  "post-change": {
+    "enabled": false,
+    "actions": []
+  }
+}
