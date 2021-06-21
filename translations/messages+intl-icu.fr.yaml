@@ -2,3 +2,6 @@ head_title.default: Welcome
 website:
     description:
     name: Website
+phake.email:
+    subject: Hi there!
+    text: How are you?
